@@ -12,7 +12,7 @@ function Sleep({ user }) {
 
   const fetchLogs = async () => {
     try {
-      const r = await axios.get(`sivaraj12km.pythonanywhere.com/sleep/${user.id}`);
+      const r = await axios.get(`https://disciplineos-backend.onrender.com/sleep/${user.id}`);
       setLogs(r.data);
     } catch {}
   };
@@ -36,7 +36,7 @@ function Sleep({ user }) {
 
   const addLog = async () => {
     if (!sleepTime || !wakeTime) { setMessage("Please fill sleep and wake time!"); return; }
-    await axios.post("sivaraj12km.pythonanywhere.com/sleep", { user_id: user.id, sleep_time: sleepTime, wake_time: wakeTime, quality });
+    await axios.post("https://disciplineos-backend.onrender.com/sleep", { user_id: user.id, sleep_time: sleepTime, wake_time: wakeTime, quality });
     setMessage("Sleep logged! 😴");
     setTimeout(() => setMessage(""), 3000);
     setSleepTime(""); setWakeTime(""); setQuality(7);

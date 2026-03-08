@@ -16,7 +16,7 @@ function Login({ onLogin }) {
     }
     setLoading(true);
     try {
-      const url = isSignup ? "sivaraj12km.pythonanywhere.com/signup" : "sivaraj12km.pythonanywhere.com/login";
+      const url = isSignup ? "https://disciplineos-backend.onrender.com/signup" : "https://disciplineos-backend.onrender.com/login";
       const data = isSignup ? { name, email, password } : { email, password };
       const response = await axios.post(url, data);
       setMessage(response.data.message);

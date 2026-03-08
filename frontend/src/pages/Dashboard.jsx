@@ -18,7 +18,7 @@ function Dashboard({ user, onNavigate }) {
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
-    axios.get(`sivaraj12km.pythonanywhere.com/dashboard/${user.id}`)
+    axios.get(`https://disciplineos-backend.onrender.com/dashboard/${user.id}`)
       .then(r => setStats(r.data))
       .catch(() => {});
   }, [user.id]);

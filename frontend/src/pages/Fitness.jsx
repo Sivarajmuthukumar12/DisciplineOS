@@ -15,14 +15,14 @@ function Fitness({ user }) {
 
   const fetchLogs = async () => {
     try {
-      const r = await axios.get(`sivaraj12km.pythonanywhere.com/fitness/${user.id}`);
+      const r = await axios.get(`https://disciplineos-backend.onrender.com/fitness/${user.id}`);
       setLogs(r.data);
     } catch {}
   };
 
   const addLog = async () => {
     if (!steps && !duration) { setMessage("Please enter steps or workout duration!"); return; }
-    await axios.post("sivaraj12km.pythonanywhere.com/fitness", {
+    await axios.post("https://disciplineos-backend.onrender.com/fitness", {
       user_id: user.id, steps: Number(steps) || 0,
       workout_type: workoutType, duration: Number(duration) || 0,
       calories: Number(calories) || Math.round((Number(duration) || 0) * 7)
