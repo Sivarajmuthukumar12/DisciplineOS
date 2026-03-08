@@ -16,7 +16,7 @@ function Login({ onLogin }) {
     }
     setLoading(true);
     try {
-      const url = isSignup ? "https://545c5a61d61404af-171-79-51-180.serveousercontent.com/signup" : "https://545c5a61d61404af-171-79-51-180.serveousercontent.com/login";
+      const url = isSignup ? "sivaraj12km.pythonanywhere.com/signup" : "sivaraj12km.pythonanywhere.com/login";
       const data = isSignup ? { name, email, password } : { email, password };
       const response = await axios.post(url, data);
       setMessage(response.data.message);
