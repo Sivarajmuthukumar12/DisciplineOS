@@ -16,7 +16,7 @@ function Login({ onLogin }) {
     }
     setLoading(true);
     try {
-      const url = isSignup ? "http://localhost:5000/signup" : "http://localhost:5000/login";
+      const url = isSignup ? "https://545c5a61d61404af-171-79-51-180.serveousercontent.com/signup" : "https://545c5a61d61404af-171-79-51-180.serveousercontent.com/login";
       const data = isSignup ? { name, email, password } : { email, password };
       const response = await axios.post(url, data);
       setMessage(response.data.message);

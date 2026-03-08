@@ -17,7 +17,7 @@ function Habits({ user }) {
 
   const fetchHabits = async () => {
     try {
-      const r = await axios.get(`http://localhost:5000/habits/${user.id}`);
+      const r = await axios.get(`https://545c5a61d61404af-171-79-51-180.serveousercontent.com/habits/${user.id}`);
       setHabits(r.data);
     } catch {}
   };
@@ -26,20 +26,20 @@ function Habits({ user }) {
 
   const addHabit = async () => {
     if (!habitName.trim()) { showMsg("Please enter a habit name!"); return; }
-    await axios.post("http://localhost:5000/habits", { user_id: user.id, name: habitName, category });
+    await axios.post("https://545c5a61d61404af-171-79-51-180.serveousercontent.com/habits", { user_id: user.id, name: habitName, category });
     setHabitName("");
     showMsg("Habit added! 🎉");
     fetchHabits();
   };
 
   const completeHabit = async (id) => {
-    await axios.post("http://localhost:5000/habits/complete", { habit_id: id });
+    await axios.post("https://545c5a61d61404af-171-79-51-180.serveousercontent.com/habits/complete", { habit_id: id });
     showMsg("Habit completed! 🔥 Streak increased!");
     fetchHabits();
   };
 
   const deleteHabit = async (id) => {
-    await axios.delete(`http://localhost:5000/habits/${id}`);
+    await axios.delete(`https://545c5a61d61404af-171-79-51-180.serveousercontent.com/habits/${id}`);
     showMsg("Habit removed!");
     fetchHabits();
   };

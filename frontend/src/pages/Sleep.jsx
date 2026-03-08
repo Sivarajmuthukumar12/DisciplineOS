@@ -12,7 +12,7 @@ function Sleep({ user }) {
 
   const fetchLogs = async () => {
     try {
-      const r = await axios.get(`http://localhost:5000/sleep/${user.id}`);
+      const r = await axios.get(`https://545c5a61d61404af-171-79-51-180.serveousercontent.com/sleep/${user.id}`);
       setLogs(r.data);
     } catch {}
   };
@@ -36,7 +36,7 @@ function Sleep({ user }) {
 
   const addLog = async () => {
     if (!sleepTime || !wakeTime) { setMessage("Please fill sleep and wake time!"); return; }
-    await axios.post("http://localhost:5000/sleep", { user_id: user.id, sleep_time: sleepTime, wake_time: wakeTime, quality });
+    await axios.post("https://545c5a61d61404af-171-79-51-180.serveousercontent.com/sleep", { user_id: user.id, sleep_time: sleepTime, wake_time: wakeTime, quality });
     setMessage("Sleep logged! 😴");
     setTimeout(() => setMessage(""), 3000);
     setSleepTime(""); setWakeTime(""); setQuality(7);

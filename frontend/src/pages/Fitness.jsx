@@ -15,14 +15,14 @@ function Fitness({ user }) {
 
   const fetchLogs = async () => {
     try {
-      const r = await axios.get(`http://localhost:5000/fitness/${user.id}`);
+      const r = await axios.get(`https://545c5a61d61404af-171-79-51-180.serveousercontent.com/fitness/${user.id}`);
       setLogs(r.data);
     } catch {}
   };
 
   const addLog = async () => {
     if (!steps && !duration) { setMessage("Please enter steps or workout duration!"); return; }
-    await axios.post("http://localhost:5000/fitness", {
+    await axios.post("https://545c5a61d61404af-171-79-51-180.serveousercontent.com/fitness", {
       user_id: user.id, steps: Number(steps) || 0,
       workout_type: workoutType, duration: Number(duration) || 0,
       calories: Number(calories) || Math.round((Number(duration) || 0) * 7)

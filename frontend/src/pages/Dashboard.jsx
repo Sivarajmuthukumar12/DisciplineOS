@@ -18,7 +18,7 @@ function Dashboard({ user, onNavigate }) {
   const [stats, setStats] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/dashboard/${user.id}`)
+    axios.get(`https://545c5a61d61404af-171-79-51-180.serveousercontent.com/dashboard/${user.id}`)
       .then(r => setStats(r.data))
       .catch(() => {});
   }, [user.id]);
