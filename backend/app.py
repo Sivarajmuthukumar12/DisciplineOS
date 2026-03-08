@@ -4,7 +4,8 @@ import sqlite3
 import hashlib
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
+
 
 def get_db():
     conn = sqlite3.connect('disciplineos.db')
